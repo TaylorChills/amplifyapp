@@ -1,13 +1,21 @@
-import './App.css';
+import '@aws-amplify/ui-react/styles.css';
+import {
+  withAuthenticator,
+  Button,
+  Heading,
+  View,
+  Card,
+} from '@aws-amplify/ui-react';
 
-function App() {
+function App({ signOut }) {
   return (
-    <>
-      <main>
-        <h2>testing</h2>
-      </main>
-    </>
+    <View className='App'>
+      <Card>
+        <Heading level={1}>We now have Auth!</Heading>
+      </Card>
+      <Button onClick={signOut}>Sign Out</Button>
+    </View>
   );
 }
 
-export default App;
+export default withAuthenticator(App);
