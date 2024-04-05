@@ -49,3 +49,48 @@ export const deleteNote = /* GraphQL */ `
     }
   }
 `;
+export const createTask = /* GraphQL */ `
+  mutation CreateTask(
+    $input: CreateTaskInput!
+    $condition: ModelTaskConditionInput
+  ) {
+    createTask(input: $input, condition: $condition) {
+      id
+      title
+      task
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const updateTask = /* GraphQL */ `
+  mutation UpdateTask(
+    $input: UpdateTaskInput!
+    $condition: ModelTaskConditionInput
+  ) {
+    updateTask(input: $input, condition: $condition) {
+      id
+      title
+      task
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const deleteTask = /* GraphQL */ `
+  mutation DeleteTask(
+    $input: DeleteTaskInput!
+    $condition: ModelTaskConditionInput
+  ) {
+    deleteTask(input: $input, condition: $condition) {
+      id
+      title
+      task
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;

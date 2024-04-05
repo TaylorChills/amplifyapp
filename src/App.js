@@ -15,6 +15,7 @@ import { listNotes } from './graphql/queries';
 import {
   createNote as createNoteMutation,
   deleteNote as deleteNoteMutation,
+  updateNote as UpdateNoteInput,
 } from './graphql/mutations';
 import { generateClient } from 'aws-amplify/api';
 import { uploadData, getUrl, remove } from 'aws-amplify/storage';
@@ -27,6 +28,14 @@ const App = ({ signOut }) => {
   useEffect(() => {
     fetchNotes();
   }, []);
+
+  async function updateNote({ id, name }) {
+    const result = await client.graphql({
+      query: UpdateNoteInput,
+      variables: { input: { id, name } },
+    });
+    console.log(result, 'testing');
+  }
 
   async function fetchNotes() {
     const apiData = await client.graphql({ query: listNotes });
@@ -127,6 +136,12 @@ const App = ({ signOut }) => {
                 style={{ width: 400 }}
               />
             )}
+            <Button
+              variation='link'
+              onClick={() => updateNote({ id: note.id, name: 'test' })}
+            >
+              update
+            </Button>
             <Button variation='link' onClick={() => deleteNote(note)}>
               Delete note
             </Button>

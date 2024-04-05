@@ -35,3 +35,35 @@ export const listNotes = /* GraphQL */ `
     }
   }
 `;
+export const getTask = /* GraphQL */ `
+  query GetTask($id: ID!) {
+    getTask(id: $id) {
+      id
+      title
+      task
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const listTasks = /* GraphQL */ `
+  query ListTasks(
+    $filter: ModelTaskFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listTasks(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        title
+        task
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+  }
+`;

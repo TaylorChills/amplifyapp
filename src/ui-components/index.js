@@ -6,4 +6,6 @@
 
 export { default as NoteCreateForm } from "./NoteCreateForm";
 export { default as NoteUpdateForm } from "./NoteUpdateForm";
+export { default as TaskCreateForm } from "./TaskCreateForm";
+export { default as TaskUpdateForm } from "./TaskUpdateForm";
 export { default as studioTheme } from "./studioTheme";
