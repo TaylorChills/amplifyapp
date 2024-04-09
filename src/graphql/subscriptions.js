@@ -1,75 +1,174 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateNote = /* GraphQL */ `
-  subscription OnCreateNote($filter: ModelSubscriptionNoteFilterInput) {
-    onCreateNote(filter: $filter) {
+export const onCreateBlog = /* GraphQL */ `
+  subscription OnCreateBlog {
+    onCreateBlog {
       id
       name
-      description
-      image
+      posts {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
     }
   }
 `;
-export const onUpdateNote = /* GraphQL */ `
-  subscription OnUpdateNote($filter: ModelSubscriptionNoteFilterInput) {
-    onUpdateNote(filter: $filter) {
+export const onUpdateBlog = /* GraphQL */ `
+  subscription OnUpdateBlog {
+    onUpdateBlog {
       id
       name
-      description
-      image
+      posts {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
     }
   }
 `;
-export const onDeleteNote = /* GraphQL */ `
-  subscription OnDeleteNote($filter: ModelSubscriptionNoteFilterInput) {
-    onDeleteNote(filter: $filter) {
+export const onDeleteBlog = /* GraphQL */ `
+  subscription OnDeleteBlog {
+    onDeleteBlog {
       id
       name
-      description
-      image
+      posts {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
     }
   }
 `;
-export const onCreateTask = /* GraphQL */ `
-  subscription OnCreateTask($filter: ModelSubscriptionTaskFilterInput) {
-    onCreateTask(filter: $filter) {
+export const onCreatePost = /* GraphQL */ `
+  subscription OnCreatePost {
+    onCreatePost {
       id
       title
-      task
+      blogID
+      blog {
+        id
+        name
+        createdAt
+        updatedAt
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
     }
   }
 `;
-export const onUpdateTask = /* GraphQL */ `
-  subscription OnUpdateTask($filter: ModelSubscriptionTaskFilterInput) {
-    onUpdateTask(filter: $filter) {
+export const onUpdatePost = /* GraphQL */ `
+  subscription OnUpdatePost {
+    onUpdatePost {
       id
       title
-      task
+      blogID
+      blog {
+        id
+        name
+        createdAt
+        updatedAt
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
     }
   }
 `;
-export const onDeleteTask = /* GraphQL */ `
-  subscription OnDeleteTask($filter: ModelSubscriptionTaskFilterInput) {
-    onDeleteTask(filter: $filter) {
+export const onDeletePost = /* GraphQL */ `
+  subscription OnDeletePost {
+    onDeletePost {
       id
       title
-      task
+      blogID
+      blog {
+        id
+        name
+        createdAt
+        updatedAt
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onCreateComment = /* GraphQL */ `
+  subscription OnCreateComment {
+    onCreateComment {
+      id
+      postID
+      post {
+        id
+        title
+        blogID
+        createdAt
+        updatedAt
+        __typename
+      }
+      content
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onUpdateComment = /* GraphQL */ `
+  subscription OnUpdateComment {
+    onUpdateComment {
+      id
+      postID
+      post {
+        id
+        title
+        blogID
+        createdAt
+        updatedAt
+        __typename
+      }
+      content
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onDeleteComment = /* GraphQL */ `
+  subscription OnDeleteComment {
+    onDeleteComment {
+      id
+      postID
+      post {
+        id
+        title
+        blogID
+        createdAt
+        updatedAt
+        __typename
+      }
+      content
       createdAt
       updatedAt
       __typename
